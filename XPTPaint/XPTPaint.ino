@@ -24,7 +24,8 @@ void setup() {
   SPI.setFrequency(ESP_SPI_FREQ);
 
   tft.begin();
-  tft.setRotation(1);
+  // This is portrait mode, and also the default, on my display.
+  tft.setRotation(0);
   touch.begin(tft.width(), tft.height());  // Must be done before setting rion
   Serial.print("tftx ="); Serial.print(tft.width()); Serial.print(" tfty ="); Serial.println(tft.height());
   tft.fillScreen(ILI9341_BLACK);
